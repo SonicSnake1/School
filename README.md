@@ -1,9 +1,8 @@
-# School
 <h1>Classes:</h1>
 <h2>Fall 2024:</h2>
 <body>
-CS3201
-CS3350
-Math3430
-Phil2190
+<p>CS3201</p>
+<p>CS3350</p>
+<p>Math3430</p>
+<p>Phil2190</p>
 </body>
