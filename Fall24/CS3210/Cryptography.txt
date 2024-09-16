@@ -23,3 +23,7 @@ Hybrid Scheme:
 2. Encrypt the message using the session key and symmetric algorithm.
 3. Encryptthe session key with the recipients publc key. This becomes the "Digital envelope".
 4. Send the encrypted message and the digital envelope to the recipient.
+
+*Use the public key encryption scheme to encrypt a key for a symmetric encryption scheme (e.g., AES)
+
+*More gennerally, two algorithms
