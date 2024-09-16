@@ -10,4 +10,16 @@ Message Authentication: I can confirm that msg came from Dr. Wu
 Message Integrity:I can confirm that msg is not altered
 Confidentiality: I know only you can read the msg.
 
-
+Is there a functional equivalent to a handwritten signature?
+	*Easy for legitimate user to sign
+	*But hard for anyone else to forge
+	*Easy for anyone to verify
+	*Dependent on message & signer (key)
+Public Key!
+	*Sign: "invert" function using private key
+	*verify: Compute function using public key
+Hybrid Scheme:
+1. Generate a secret key (session key) at random.
+2. Encrypt the message using the session key and symmetric algorithm.
+3. Encryptthe session key with the recipients publc key. This becomes the "Digital envelope".
+4. Send the encrypted message and the digital envelope to the recipient.
