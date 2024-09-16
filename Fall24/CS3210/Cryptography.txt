@@ -1,4 +1,12 @@
 Message Authentication: I can confirm that msg came from Dr. Wu
+	-Protects against active attacks
+	- Verifies recieved message is authentic
+		*Contents have not been altered
+		*From Authentic source
+		*Timley and in correct sequence
+	-Can use conventional encryption
+		*Only sender & receiver share a key
+
 Message Integrity:I can confirm that msg is not altered
 Confidentiality: I know only you can read the msg.
 
