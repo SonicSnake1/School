@@ -1,0 +1,5 @@
+Message Authentication: I can confirm that msg came from Dr. Wu
+Message Integrity:I can confirm that msg is not altered
+Confidentiality: I know only you can read the msg.
+
+
