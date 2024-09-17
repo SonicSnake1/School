@@ -10,8 +10,8 @@
     <td>Attitude</td>
     <td>Fear/Dread</td>
     <td>Rage</td>
-    <td>Desirable/Welcom</td>
-    <td>The Unknown</td>
+    <td>Desirable/Welcome</td>
+    <td><p>The Unknown</p> <p>Embrace the unkown</p></td>
   </tr>
   <tr>
     <td>View of Life</td>
