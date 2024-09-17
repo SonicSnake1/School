@@ -1,5 +1,6 @@
  <table>
   <tr>
+    <th></th>
     <th>Larkin</th>
     <th>Thomas</th>
     <th>Frost</th>
