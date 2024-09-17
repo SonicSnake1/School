@@ -7,22 +7,17 @@
   </tr>
   <tr>
     <td>Attitude</td>
-    <td>View of Life</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td> </td>
-    <td> </td>
+    <td>View of Life</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
- <tr>
-    <td> </td>
-    <td> </td>
   </tr>
- <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
- <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-</table> 
+ </table> 
