@@ -8,10 +8,10 @@
   </tr>
   <tr>
     <td>Attitude</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Fear/Dread</td>
+    <td>Rage</td>
+    <td>Desirable/Welcom</td>
+    <td>The Unknown</td>
   </tr>
   <tr>
     <td>View of Life</td>
