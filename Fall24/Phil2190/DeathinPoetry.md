@@ -16,7 +16,7 @@
   <tr>
     <td>View of Life</td>
     <td>A very miserable experience, with no hope</td>
-    <td></td>
+    <td>Life would be a thing to celebrate and be excited about. When faced with death, life would become rageful at the idea of losing life</td>
     <td></td>
     <td></td>
   </tr>
