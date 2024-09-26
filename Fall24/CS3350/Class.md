@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <style>
-html {backround-color: black;}
+html {background-color: black;text-align: center;}
 h1 {color: white;}
-h2 {color: white;}
-h3 {color: white;}
+p {color: lightblue;}
 </style>
-
 <h1>CS3350 Data Structures</h1>
 
