@@ -27,3 +27,9 @@ Hybrid Scheme:
 *Use the public key encryption scheme to encrypt a key for a symmetric encryption scheme (e.g., AES)
 
 *More gennerally, two algorithms
+
+
+Exercise 2:
+
+C value is P + (key % 26)
+C = p + (K % 26)
