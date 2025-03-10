@@ -1,5 +1,7 @@
 #Queues
-**First in First out**  
+**First in First out** 
+##Time complexity
+###O(1) 
 ##Types of queues:  
 1. Normal queue (FIFO)  
 2. Circular Queue (Normal Queue)  
