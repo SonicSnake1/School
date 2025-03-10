@@ -1,24 +1,24 @@
-#Map
-##Motivation & Example
-###Search specific
+##Map
+###Motivation & Example
+####Search specific
 Binary search
-###Complexity  specific
+####Complexity  specific
 Log(n)
-###Search Broad
+####Search Broad
 Linear search
-##Sort and search keys
-###Sort key
+###Sort and search keys
+####Sort key
 The data you use to search
-###Search key
+####Search key
 arrange data based on data of search key
-##Map ADT
+###Map ADT
 Value based container; like sorted list, binary search tree, priority queue and a heap  
 Maps a key to a value, no duplicates allowed.  
 The key value pair is called an entry  
-##Dictionary ADT
+###Dictionary ADT
 The dictionary ADT is a searchable ADT  
 Word-def pairs, credit card auth, DNS mapping (Domain -ip address)
-###Dictionary ADT Methods:
+####Dictionary ADT Methods:
 Contains()  
 add()  
 remove()  
@@ -26,16 +26,16 @@ size()
 isEmpty()  
 clear()  
 getItem(k)  
-###Entry
+####Entry
 getKey  
 getValue  
 setKey  
 setValue  
-###insert new item
+####insert new item
 O(1)
-###find and erase  worst case
+####find and erase  worst case
 O(n)
-###search table
+####search table
 Implemented in a sorted array 
 find: O(log n)
 put: O(n)
