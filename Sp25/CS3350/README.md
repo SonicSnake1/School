@@ -1,5 +1,3 @@
-#Hash Tables
-
 ##In Class Exercise
 
 |   k   | h(k) | d(k) | j=0 | j=1 | j=2 | j=3 |
