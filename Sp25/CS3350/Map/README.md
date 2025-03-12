@@ -53,7 +53,11 @@
 #### Collision Handling
 - **Collision** occurs when two different keys hash to the same index in the hash table.  
 - Collisions are typically handled by chaining, where each table index stores a linked list of key-value pairs.  
-- In this case, multiple entries that map to the same index are stored in a linked list connected to that index.
+- In this case, multiple entries that map to the same index are stored in a linked list connected to that index.  
+
+#####Collision Resolution Methods
+- Linear Probing: Handles collisions by placeing the colliding item 
+- Double Hasing: (k + j * d(k) ) mod n, for ... ; d2(k) = q - k mod q; q < N and q is prime  
 
 ### Hash Functions
 A **hash function** is an algorithm that takes an input (or "key") and returns an integer, which represents the index in the hash table. The goal of the hash function is to distribute the keys as evenly as possible across the hash table, minimizing collisions. Some common properties of a good hash function include:
@@ -96,24 +100,158 @@ class HashTable {
             int index = hash(key);
             return table[index].get(key);
         }
-};
-``` 
-
+}; 
+```
 ###In Class Exercise
 
-##In Class Exercise
+Insert keys  5, 29, 27, 11, 20 , 0 ; h(k) = k % n  
 
-|   k   | h(k) | d(k) | j=0 | j=1 | j=2 | j=3 |
-|-------|------|------|-----|-----|-----|-----|
-| 18    |      |      |     |     |     |     |
-| 41    |      |      |     |     |     |     |
-| 22    |      |      |     |     |     |     |
-| 44    |      |      |     |     |     |     |
-| 59    |      |      |     |     |     |     |
-| 32    |      |      |     |     |     |     |
-| 31    |      |      |     |     |     |     |
-| 73    |      |      |     |     |     |     |
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|----|----|----|
+| 0 |   |   |   | 5 |   |   |   |   |   |    |    |    |
 
+####Double Hashing:
+
+## In Class Exercise
+
+### Linear Probing
+
+Given the hash function \( h(k) = k \mod n \), where the table size \( n = 13 \), we need to insert the following keys:
+
+**Keys to Insert:** 5, 29, 27, 11, 20, 0
+
+Let's visualize how the hash table will look after each insertion.
+
+| Index | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 |
+|-------|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| Value |  0 |    |    |    |  5 |    |    |    |    |    |    |    |    |
+
+#### Step-by-step Insertion:
+
+1. **Insert 5:**  
+   \( h(5) = 5 \mod 13 = 5 \)  
+   Slot 5 is empty, so **5** is inserted at index 5.
+
+2. **Insert 29:**  
+   \( h(29) = 29 \mod 13 = 3 \)  
+   Slot 3 is empty, so **29** is inserted at index 3.
+
+3. **Insert 27:**  
+   \( h(27) = 27 \mod 13 = 1 \)  
+   Slot 1 is empty, so **27** is inserted at index 1.
+
+4. **Insert 11:**  
+   \( h(11) = 11 \mod 13 = 11 \)  
+   Slot 11 is empty, so **11** is inserted at index 11.
+
+5. **Insert 20:**  
+   \( h(20) = 20 \mod 13 = 7 \)  
+   Slot 7 is empty, so **20** is inserted at index 7.
+
+6. **Insert 0:**  
+   \( h(0) = 0 \mod 13 = 0 \)  
+   Slot 0 is empty, so **0** is inserted at index 0.
+
+The final hash table after inserting all keys:
+
+| Index | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 |
+|-------|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| Value |  0 | 27 |    | 29 |    |  5 |    | 20 |    |    |    | 11 |    |
+
+---
+
+### Double Hashing
+
+For **Double Hashing**, we are given:
+
+- \( N = 13 \) (hash table size)
+- \( h(k) = k \mod 13 \) (primary hash function)
+- \( d(k) = 7 - (k \mod 7) \) (secondary hash function)
+
+We need to insert the keys: 18, 41, 22, 44, 59, 32, 31, 73.
+
+| Key  | \( h(k) \) | \( d(k) \) | \( j=0 \) | \( j=1 \) | \( j=2 \) | \( j=3 \) |
+|------|------------|------------|-----------|-----------|-----------|-----------|
+| 18   | 5          | 3          | 5         | 8         | 11        |           |
+| 41   | 2          | 1          | 2         | 3         | 4         |           |
+| 22   | 9          | 6          | 9         | 2         | 8         |           |
+| 44   | 5          | 5          | 5         | 10        | 2         |           |
+| 59   | 7          | 4          | 7         | 11        | 2         |           |
+| 32   | 6          | 3          |           |           |           |           |
+| 31   | 5          | 4          |           |           |           |           |
+| 73   | (empty)    | 4          |           |           |           |           |
+
+#### Step-by-step Insertion:
+
+1. **Insert 18:**  
+   \( h(18) = 18 \mod 13 = 5 \), \( d(18) = 7 - (18 \mod 7) = 3 \)  
+   Slot 5 is empty, so **18** is inserted at index 5.
+
+2. **Insert 41:**  
+   \( h(41) = 41 \mod 13 = 2 \), \( d(41) = 7 - (41 \mod 7) = 1 \)  
+   Slot 2 is empty, so **41** is inserted at index 2.
+
+3. **Insert 22:**  
+   \( h(22) = 22 \mod 13 = 9 \), \( d(22) = 7 - (22 \mod 7) = 6 \)  
+   Slot 9 is empty, so **22** is inserted at index 9.
+
+4. **Insert 44:**  
+   \( h(44) = 44 \mod 13 = 5 \), \( d(44) = 7 - (44 \mod 7) = 5 \)  
+   Slot 5 is occupied by **18**, so check the next slot using \( j=1 \):  
+   \( 5 + 5 = 10 \) → Slot 10 is empty, so **44** is inserted at index 10.
+
+5. **Insert 59:**  
+   \( h(59) = 59 \mod 13 = 7 \), \( d(59) = 7 - (59 \mod 7) = 4 \)  
+   Slot 7 is empty, so **59** is inserted at index 7.
+
+6. **Insert 32:**  
+   \( h(32) = 32 \mod 13 = 6 \), \( d(32) = 7 - (32 \mod 7) = 3 \)  
+   Slot 6 is empty, so **32** is inserted at index 6.
+
+7. **Insert 31:**  
+   \( h(31) = 31 \mod 13 = 5 \), \( d(31) = 7 - (31 \mod 7) = 4 \)  
+   Slot 5 is occupied by **18**, so check the next slot using \( j=1 \):  
+   \( 5 + 4 = 9 \) → Slot 9 is occupied by **22**, so check the next slot using \( j=2 \):  
+   \( 5 + 2 \times 4 = 13 \mod 13 = 0 \) → Slot 0 is empty, so **31** is inserted at index 0.
+
+8. **Insert 73:**  
+   \( h(73) = 73 \mod 13 = 8 \), \( d(73) = 7 - (73 \mod 7) = 3 \)  
+   Slot 8 is empty, so **73** is inserted at index 8.
+
+The final hash table after all insertions using Double Hashing:
+
+| Index | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 |
+|-------|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| Value | 31 |    | 41 |    |    | 18 | 32 | 59 | 73 | 22 | 44 |    |    |
+
+---
+
+  
+Is this hash function valid:  
+```cpp
+int hashFunction()
+{
+	return 17;
+}
+//Everyhting would go into the same bucket and cause collisions
+```
+  
+Preformance of Hashing  
+lambda = n/N
+lambda = current number of tale entries/   
+  
+Capacity of 13 contains 9 values:  
+lambda = n/N  
+lambda = 9/ 13 = 0.7   
+Is it ok? ___  
+What would be the expected number of probes:  
+1  (1 - lambda) = 1/0.3 = 3 probes
+
+####Linear:
+  
+h(k) = k mod 13  
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 |---|---|---|---|---|---|---|---|---|---|----|----|----|
-|   |   |   |   |   |   |   |   |   |   |    |    |    |
+|   |   | 41  |   |   | 18  | 44  | 59  | 32  | 22  |  31  | 73   |    |
+
+
