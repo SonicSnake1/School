@@ -20,11 +20,11 @@ public:
     smartPtr(T* ptr = nullptr) : pData(ptr) {}
 
     // Copy Constructor
-    smartPtr(const smartPtr<T>& spRight) {
-        if (spRight.pData) {
-            pData = new T(*spRight.pData); // Create a new object and copy the data
-        } else {
-            pData = nullptr;
+    smartPtr(const smartPtr<T> &sp) {
+        pData = nullptr;
+        if (sp.pData) {
+            pData = new T; // allocate memory
+            *pData = *sp.pData; // Copy data
         }
     }
 
@@ -44,11 +44,11 @@ public:
     }
 
     // Assignment Operator
-    const smartPtr<T>& operator=(const smartPtr<T>& spRight) {
-        if (this != &spRight) {
+    const smartPtr<T>& operator=(const smartPtr<T> &) {
+        if (this != &sp) {
             delete pData; // Free existing memory
-            if (spRight.pData) {
-                pData = new T(*spRight.pData); // Copy data from spRight
+            if (sp.pData) {
+                pData = new T(*sp.pData); // Copy data from spRight
             } else {
                 pData = nullptr;
             }
