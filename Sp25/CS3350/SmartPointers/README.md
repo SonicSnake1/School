@@ -1,8 +1,11 @@
-##STL Smart Pointers
+## STL Smart Pointers
+### Creating A SmartPtr Object
 
-###IN-Class Activity:
+[SmrtPtrObject](SmrtPtr.cpp)  
 
-####Let’s design and implement our own Smart Pointer template class. Fill in the missing data member and prototypes for methods.
+### IN-Class Activity:
+
+#### Let’s design and implement our own Smart Pointer template class. Fill in the missing data member and prototypes for methods.
 
 
 ```cpp
@@ -20,7 +23,7 @@ public:
 };
 ```
 
-####Complete the copy constructor and the overloaded assignment operator methods.
+#### Complete the copy constructor and the overloaded assignment operator methods.
 ```cpp
 // copy constructor
 //
@@ -49,7 +52,7 @@ pData = new T;
 return *this;
 }
 ```
-####Define a basic Person class and use it with our SmartPtr class. The class should have one string data member to hold name, and overloaded constructor accepting the name with empty string default value, and getName() accessort method returning the name.
+#### Define a basic Person class and use it with our SmartPtr class. The class should have one string data member to hold name, and overloaded constructor accepting the name with empty string default value, and getName() accessort method returning the name.
 
 ```cpp
 // Person class
