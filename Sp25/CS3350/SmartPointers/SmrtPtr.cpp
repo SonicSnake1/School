@@ -23,7 +23,7 @@ public:
     smartPtr(const smartPtr<T> &sp) {
         pData = nullptr;
         if (sp.pData) {
-            pData = new T; // allocate memory
+            pData = new T; // Allocate memory
             *pData = *sp.pData; // Copy data
         }
     }
@@ -35,20 +35,26 @@ public:
 
     // Dereference Operator
     T& operator*() {
-        return *pData;
+        if (pData) {
+            return *pData;
+        }
+        throw runtime_error("Dereferencing a null pointer");
     }
 
     // Arrow Operator
     T* operator->() {
-        return pData;
+        if (pData) {
+            return pData;
+        }
+        throw runtime_error("Accessing a null pointer");
     }
 
     // Assignment Operator
-    const smartPtr<T>& operator=(const smartPtr<T> &) {
+    const smartPtr<T>& operator=(const smartPtr<T>& sp) {
         if (this != &sp) {
             delete pData; // Free existing memory
             if (sp.pData) {
-                pData = new T(*sp.pData); // Copy data from spRight
+                pData = new T(*sp.pData); // Copy data from sp
             } else {
                 pData = nullptr;
             }

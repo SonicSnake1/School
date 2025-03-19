@@ -3,6 +3,28 @@
 
 [Smart Pointer Template Class](SmrtPtr.cpp)  
 
+### Lecture
+
+  Smart Pointers are Class objects that behave like built-in pointers, but manage the memory created with **New**.  
+#### Unique Ownership
+- You can create a unique pointer ti an allocated object, then when the unique_ptr goes out of scope , the pointed to object gets deleted  
+
+```cpp
+void somefunction(){
+    unique_ptr<Thing> p(new Thing);
+    do_somehting_with(p);
+    p->defrangualte();
+    }
+```
+- reset() ->
+- **Fill in later**    
+
+#### Under the Hood
+- Can only use smart pointers to refer to objects allocated with **New**  
+- 
+
+
+
 ### IN-Class Activity:
 
 #### Let’s design and implement our own Smart Pointer template class. Fill in the missing data member and prototypes for methods.
