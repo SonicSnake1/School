@@ -3,6 +3,7 @@
 - Binary Tress are nonlinear and not positionally oriented  
 - Traverse: Pre-order, inorder, Post-order  
 - Perfect, Full and Complete trees (see Trees for more)  
+- Time complexity : O(logn)  
 
 ## Removing a node:
 
@@ -33,3 +34,4 @@ Binary trees have many great uses, however, searching for a particular item is N
 
 - Binary Search Trees (BST), which will organize data in the tree by value to faciliate more efficient searching  
 - BST allows searching from left to right.
+## TREE ADT
